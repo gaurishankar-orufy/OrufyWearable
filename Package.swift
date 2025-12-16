@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "OrufyWearable",
-            url: "https://github.com/you/MySDK-SPM/releases/download/1.0.0/MySDK-.zip",
+            url: "https://github.com/gaurishankar-orufy/OrufyWearable/releases/download/1.0.0/OrufyWearable-0.1.zip",
             checksum: "29d13f63f3e8ee5132b140107fc0fecce360a434f5bf41ce913fdcbb718d5cf4"
         )
     ]
