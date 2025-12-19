@@ -19,7 +19,7 @@ let package = Package(
         .binaryTarget(
             name: "OrufyWearable",
             url: "https://github.com/gaurishankar-orufy/OrufyWearable/releases/download/1.1.4/OrufyWearable.zip",
-            checksum: "f3530ad1df898892b24caa68d0cc32fdfdab85c418e6de2953b18a694adc7782"
+            checksum: "18d279e37764eeeed9f203df149ba4758be8944fb259f8c629400fad938cdf35"
         )
     ]
 )
