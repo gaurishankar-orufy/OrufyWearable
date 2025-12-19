@@ -1,0 +1,41 @@
+[
+    {
+        "id": "{{id}}",
+        "layout_config": {
+            "component_type": "Image",
+            "source": "assets/splash_logo.png",
+            "width": 200,
+            "height": 200,
+            "background_color": "#FFFFFF",
+            "shape": "circle"
+        }
+    },
+    {
+        "id": "{{id}}",
+        "layout_config": {
+            "component_type": "Text",
+            "label": "Welcome to the App",
+            "font_weight": "bold",
+            "font_size": 24,
+            "max_lines": 2,
+            "color": "#000000"
+        }
+    },
+    {
+        "id": "{{id}}",
+        "layout_config": {
+            "component_type": "Button",
+            "label": "Submit",
+            "font_weight": "bold",
+            "font_size": 24,
+            "color": "#000000",
+            "background_color": "#FF5733"
+        },
+        "events": {
+            "on_click": {
+                "action": "submit_form"
+            }
+        }
+    }
+    
+]

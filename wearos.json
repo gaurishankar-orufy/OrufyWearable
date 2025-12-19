@@ -1,0 +1,127 @@
+{
+  "version": "1.0",
+  "json_schema_version": "2024-01",
+  "app_metadata": {
+    "name": "OrufyWearableTest",
+    "platform": "Wearable",
+    "app_id": "com.orufy.wearabletest.1505250",
+    "app_user_id": "xyz-1505250"
+  },
+  "theme": {
+    "background_color": "#FFFFFF"
+  },
+  "features": {
+    "heart_rate_monitor": true,
+    "step_counter": true,
+    "sleep_tracker": false
+  },
+  "permissions": [
+    "access_heart_rate",
+    "access_steps",
+    "access_location"
+  ],
+  "settings": {
+    "units": "metric",
+    "notifications_enabled": true
+  },
+  "update_info": {
+    "last_updated": "2024-06-01T12:00:00Z",
+    "version": "1.1",
+    "changelog": "Added sleep tracker feature and improved step counter accuracy."
+  },
+  "screens": [
+    {
+      "id": "splash_screen",
+      "duration": 3,
+      "description": "Splash Screen",
+      "type": "oneTime",
+      "actions": {
+        "on_appear_action": ["load_user_data"],
+        "on_disappear_action": []
+      },
+      "root_layout": {
+        "id": "splash_screen_layout",
+        "layout_config": {
+          "layout_type": "Column",
+          "alignment": "center",
+          "spacing": 10
+        },
+        "children": [
+          {
+            "id": "splash_logo",
+            "layout_config": {
+              "component_type": "Image",
+              "source": "assets/splash_logo.png",
+              "width": 200,
+              "height": 200,
+              "background_color": "#FFFFFF"
+            }
+          },
+          {
+            "id": "splash_text",
+            "layout_config": {
+              "component_type": "Text",
+              "text": "Welcome to Orufy Wearable Test",
+              "font_weight": "bold",
+              "color": "#000000"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dashboard_screen",
+      "description": "Main Dashboard",
+      "root_layout": {
+        "id": "dashboard_layout",
+        "layout_config": {
+          "layout_type": "Grid",
+          "columns": 2,
+          "rows": 2,
+          "spacing": 15
+        },
+        "children": [
+          {
+            "id": "grid_item_1",
+            "layout_config": {
+              "layout_type": "Column",
+              "alignment": "center",
+              "spacing": 5
+            },
+            "children": [
+              {
+                "id": "heart_rate_card",
+                "layout_config": {
+                  "component_type": "HeartRateMonitor"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "load_user_data",
+      "type": "api",
+      "endpoint": "https://api.orufy.com/userdata",
+      "method": "GET",
+      "headers": {},
+      "store_response_as": "user_data",
+      "next_action": "navigate_to_dashboard",
+      "on_error_action": "show_error_message"
+    },
+    {
+      "id": "show_error_message",
+      "type": "alert",
+      "message": "Failed to load user data. Please try again later."
+    },
+    {
+      "id": "navigate_to_dashboard",
+      "type": "navigation",
+      "presentation_style": "push",
+      "target_screen_id": "dashboard_screen"
+    }
+  ]
+}
